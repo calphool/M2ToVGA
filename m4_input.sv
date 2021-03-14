@@ -11,6 +11,17 @@ typedef logic [23:0] TRUNC23;
 typedef logic [9:0] TRUNC9;
 
 
+
+/*************************************
+*
+* altddio / MITI_PLL_Divider ratio:
+*
+* 399.36     405.504
+* ------  or -------  or (32:1)   
+*  12.48      12.672
+*
+**************************************/
+
 // module entry point
 module m4_input (
               hsync,
@@ -27,17 +38,17 @@ module m4_input (
 				  );
 				  
 // inputs and outputs				  
-		input hsync;
-		input vsync;
-		input video;
-		output logic [17:0] waddr;
-		input dotclk;
-		output logic pixel_state;
-		output logic wren;
-		output logic leds0,leds1,leds2,leds3;
-      output logic [9:0] outputLEDA;
-		output logic [9:0] outputLEDB;
-		input H_0, H_1, H_2, H_3, H_4, H_5;
+	 input hsync;
+	 input vsync;
+	 input video;
+	 output logic [17:0] waddr;
+	 input dotclk;
+	 output logic pixel_state;
+	 output logic wren;
+	 output logic leds0,leds1,leds2,leds3;
+    output logic [9:0] outputLEDA;
+	 output logic [9:0] outputLEDB;
+	 input H_0, H_1, H_2, H_3, H_4, H_5;
 		
 // registers
     reg [9:0] INCounterX;
@@ -96,7 +107,7 @@ begin
 	 outputLEDA <= 0;                // LED A indicator (10 bits)
 	 outputLEDB <= 0;                // LED B indicator (10 bits)
 	 screenMode <= SIXTYFOURCOLMODE; // screen mode
-	 offsetc <= 0;
+	 offsetc <= 0;                   // left/right offset that gets set by dip switches
 end
 
 
@@ -108,21 +119,21 @@ begin
 	 vsync_r2 <= vsync;
 	 vsync_r <= vsync_r2;
 	 
-	 h0_r <= H_0;
+	 h0_r <= H_0; // bring in the offset value from DIPs
 	 h1_r <= H_1;
 	 h2_r <= H_2;
 	 h3_r <= H_3;
 	 h4_r <= H_4;
 	 h5_r <= H_5;
 	 
-	 h0_r2 <= h0_r;
+	 h0_r2 <= h0_r; // double flop the registers
 	 h1_r2 <= h1_r;
 	 h2_r2 <= h2_r;
 	 h3_r2 <= h3_r;
 	 h4_r2 <= h4_r;
 	 h5_r2 <= h5_r;	 
 	 
-	 hvalue[5] <= h5_r2;
+	 hvalue[5] <= h5_r2; // put them double flopped values into a bit array
 	 hvalue[4] <= h4_r2;
 	 hvalue[3] <= h3_r2;
 	 hvalue[2] <= h2_r2;
@@ -131,7 +142,7 @@ begin
 	 
 	 if(hvalue >=32)
 	     begin
-		      offsetc = TRUNC9'((hvalue - 32) << 2);
+		      offsetc = TRUNC9'((hvalue - 32) << 2);   // split the 6 bit value in half and store in offsetc
 		  end
     else
 	     begin
@@ -153,10 +164,9 @@ always @(posedge dotclk)
 begin
 	 ledsreg = TRUNC23'(ledsreg + 1'b1);           // increment the LED counter
 	 leds0 = ledsreg[19];                          // the 20th bit of the register seems to toggle about every half 
-	 leds1 = ledsreg[20];
-    leds2 = ledsreg[21];                         	 // second when the dot clock is around 10mhz	 
+	 leds1 = ledsreg[20];                          // second when the dot clock is around 10mhz
+    leds2 = ledsreg[21];                         	 	 
 	 
-	 //outputLEDB[9] = state_reg[0];                 // normal = off, memclear = on
 	 outputLEDB = highestDotCount;
 	 
 	 // once memCtr clears all 192000 bytes, go back to normal mode
@@ -187,8 +197,6 @@ begin
 				  end
 			  end
 	 end
-	 
-	 //outputLEDB[8] = screenMode;                   // 64 col mode = on, 80 col mode = off;	 
 end
 
 
@@ -250,7 +258,7 @@ always @(posedge dotclk, posedge video)
 				 else 
 				     if(state_reg == MEMCLEAR)                                         // we are in MEMCLEAR mode
 					  begin
-					      leds3 <= 1;                                                   // turn Core Board LED 2 off
+					      leds3 <= 1;                                                   // turn Core Board LED 3 off
 					      pixel_state <= 0;                                             // set pixel going to RAM to off
 							waddr[17:0] = TRUNC'(memCtr);                                 // set write address to memCtr
 							memCtr = memCtr + 1'b1;                                       // increment memCtr

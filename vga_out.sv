@@ -103,42 +103,28 @@ always @(posedge vgaclk)
 begin
     begin
 		 if(inDisplayArea)
-		     begin
-			     // draw a border around the screen
-				  if(CounterY < 2 || CounterY > 478)
-				      begin
-						    vr[0] <= 1;
-							 vg[0] <= 1;
-							 vb[0] <= 1;
-							 vr[1] <= 1;
-							 vg[1] <= 1;
-							 vb[1] <= 1;
-				          raddr[17:0] = TRUNC' (((CounterY / 2) * 800) + CounterX);
-						 end
-				  else
-						 begin
-							 if(bit_from_ram)
-							     begin
-								     vr[0] <= fg_r_ff2;
-								     vr[1] <= fg_r_ff2;
-								     vg[0] <= fg_g_ff2;
-								     vg[1] <= fg_g_ff2;
-								     vb[0] <= fg_b_ff2;
-								     vb[1] <= fg_b_ff2;
-				                 raddr[17:0] = TRUNC' (((CounterY / 2) * 800) + CounterX);
-								  end
-							 else
-							     begin
-								     vr[0] <= bg_r_ff2;
-								     vr[1] <= bg_r_ff2;
-								     vg[0] <= bg_g_ff2;
-								     vg[1] <= bg_g_ff2;
-								     vb[0] <= bg_b_ff2;
-								     vb[1] <= bg_b_ff2;
-				                 raddr[17:0] = TRUNC' (((CounterY / 2) * 800) + CounterX);
-								  end
-						 end
-				  end
+					 begin
+						 if(bit_from_ram)
+							  begin
+								  vr[0] <= fg_r_ff2;
+								  vr[1] <= fg_r_ff2;
+								  vg[0] <= fg_g_ff2;
+								  vg[1] <= fg_g_ff2;
+								  vb[0] <= fg_b_ff2;
+								  vb[1] <= fg_b_ff2;
+								  raddr[17:0] = TRUNC' (((CounterY / 2) * 800) + CounterX);
+							  end
+						 else
+							  begin
+								  vr[0] <= bg_r_ff2;
+								  vr[1] <= bg_r_ff2;
+								  vg[0] <= bg_g_ff2;
+								  vg[1] <= bg_g_ff2;
+								  vb[0] <= bg_b_ff2;
+								  vb[1] <= bg_b_ff2;
+								  raddr[17:0] = TRUNC' (((CounterY / 2) * 800) + CounterX);
+							  end
+					 end
 		 else
 			  // set RGB pixel to all zeroes if we're in a blanking area
 			  begin

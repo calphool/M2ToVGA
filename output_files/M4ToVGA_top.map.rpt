@@ -1,5 +1,5 @@
 Analysis & Synthesis report for M4ToVGA_top
-Sat Mar 13 20:47:52 2021
+Sat Mar 13 23:15:00 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -36,10 +36,11 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  28. altsyncram Parameter Settings by Entity Instance
  29. altpll Parameter Settings by Entity Instance
  30. lpm_mult Parameter Settings by Entity Instance
- 31. Post-Synthesis Netlist Statistics for Top Partition
- 32. Elapsed Time Per Partition
- 33. Analysis & Synthesis Messages
- 34. Analysis & Synthesis Suppressed Messages
+ 31. Port Connectivity Checks: "vga_out:inst2|hvsync_generator:hvsync"
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
+ 35. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -66,13 +67,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Mar 13 20:47:52 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 13 23:15:00 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; M4ToVGA_top                                 ;
 ; Top-level Entity Name              ; M4ToVGA_top                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 625                                         ;
-;     Total combinational functions  ; 495                                         ;
+; Total logic elements               ; 618                                         ;
+;     Total combinational functions  ; 488                                         ;
 ;     Dedicated logic registers      ; 325                                         ;
 ; Total registers                    ; 325                                         ;
 ; Total pins                         ; 49                                          ;
@@ -187,68 +188,68 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                              ; Library ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------+---------+
-; clkstg2.v                        ; yes             ; User Wizard-Generated File         ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/clkstg2.v              ;         ;
-; altddio.v                        ; yes             ; User Wizard-Generated File         ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/altddio.v              ;         ;
-; MITI_PLL_Divider.sv              ; yes             ; User SystemVerilog HDL File        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/MITI_PLL_Divider.sv    ;         ;
-; vgaclk.v                         ; yes             ; User Wizard-Generated File         ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/vgaclk.v               ;         ;
-; framebuffer.v                    ; yes             ; User Wizard-Generated File         ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/framebuffer.v          ;         ;
-; vga_out.sv                       ; yes             ; User SystemVerilog HDL File        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/vga_out.sv             ;         ;
-; M4ToVGA_top.bdf                  ; yes             ; User Block Diagram/Schematic File  ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/M4ToVGA_top.bdf        ;         ;
-; m4_input.sv                      ; yes             ; User SystemVerilog HDL File        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv            ;         ;
-; hvsync_generator.sv              ; yes             ; User SystemVerilog HDL File        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/hvsync_generator.sv    ;         ;
-; LEDInverter.sv                   ; yes             ; User SystemVerilog HDL File        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/LEDInverter.sv         ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                     ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc              ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                        ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                     ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                     ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                      ;         ;
-; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                         ;         ;
-; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                         ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                       ;         ;
-; db/altsyncram_loj1.tdf           ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/altsyncram_loj1.tdf ;         ;
-; db/decode_bua.tdf                ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/decode_bua.tdf      ;         ;
-; db/decode_4aa.tdf                ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/decode_4aa.tdf      ;         ;
-; db/mux_kob.tdf                   ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/mux_kob.tdf         ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                         ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc                    ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc                  ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc                  ;         ;
-; db/clkstg2_altpll.v              ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/clkstg2_altpll.v    ;         ;
-; db/vgaclk_altpll1.v              ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/vgaclk_altpll1.v    ;         ;
-; altddio_in.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altddio_in.tdf                     ;         ;
-; stratix_ddio.inc                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ddio.inc                   ;         ;
-; cyclone_ddio.inc                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cyclone_ddio.inc                   ;         ;
-; db/ddio_in_8hf.tdf               ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/ddio_in_8hf.tdf     ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf                       ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.inc                    ;         ;
-; multcore.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.inc                       ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/bypassff.inc                       ;         ;
-; altshift.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.inc                       ;         ;
-; multcore.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.tdf                       ;         ;
-; csa_add.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/csa_add.inc                        ;         ;
-; mpar_add.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.inc                       ;         ;
-; muleabz.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/muleabz.inc                        ;         ;
-; mul_lfrg.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mul_lfrg.inc                       ;         ;
-; mul_boothc.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mul_boothc.inc                     ;         ;
-; alt_ded_mult.inc                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_ded_mult.inc                   ;         ;
-; alt_ded_mult_y.inc               ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc                 ;         ;
-; dffpipe.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/dffpipe.inc                        ;         ;
-; mpar_add.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf                       ;         ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.tdf                    ;         ;
-; addcore.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/addcore.inc                        ;         ;
-; look_add.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/look_add.inc                       ;         ;
-; alt_stratix_add_sub.inc          ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc            ;         ;
-; db/add_sub_ngh.tdf               ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/add_sub_ngh.tdf     ;         ;
-; db/add_sub_rgh.tdf               ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/add_sub_rgh.tdf     ;         ;
-; altshift.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.tdf                       ;         ;
-; db/mult_rgt.tdf                  ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/mult_rgt.tdf        ;         ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                   ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
+; clkstg2.v                        ; yes             ; User Wizard-Generated File         ; Z:/Downloads/fpgaProjects/M2ToVGA/clkstg2.v                                    ;         ;
+; altddio.v                        ; yes             ; User Wizard-Generated File         ; Z:/Downloads/fpgaProjects/M2ToVGA/altddio.v                                    ;         ;
+; MITI_PLL_Divider.sv              ; yes             ; User SystemVerilog HDL File        ; Z:/Downloads/fpgaProjects/M2ToVGA/MITI_PLL_Divider.sv                          ;         ;
+; vgaclk.v                         ; yes             ; User Wizard-Generated File         ; Z:/Downloads/fpgaProjects/M2ToVGA/vgaclk.v                                     ;         ;
+; framebuffer.v                    ; yes             ; User Wizard-Generated File         ; Z:/Downloads/fpgaProjects/M2ToVGA/framebuffer.v                                ;         ;
+; vga_out.sv                       ; yes             ; User SystemVerilog HDL File        ; Z:/Downloads/fpgaProjects/M2ToVGA/vga_out.sv                                   ;         ;
+; M4ToVGA_top.bdf                  ; yes             ; User Block Diagram/Schematic File  ; Z:/Downloads/fpgaProjects/M2ToVGA/M4ToVGA_top.bdf                              ;         ;
+; m4_input.sv                      ; yes             ; User SystemVerilog HDL File        ; Z:/Downloads/fpgaProjects/M2ToVGA/m4_input.sv                                  ;         ;
+; hvsync_generator.sv              ; yes             ; User SystemVerilog HDL File        ; Z:/Downloads/fpgaProjects/M2ToVGA/hvsync_generator.sv                          ;         ;
+; LEDInverter.sv                   ; yes             ; User SystemVerilog HDL File        ; Z:/Downloads/fpgaProjects/M2ToVGA/LEDInverter.sv                               ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf          ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc   ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc             ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc          ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc          ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc           ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc              ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc              ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc            ;         ;
+; db/altsyncram_loj1.tdf           ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M2ToVGA/db/altsyncram_loj1.tdf                       ;         ;
+; db/decode_bua.tdf                ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M2ToVGA/db/decode_bua.tdf                            ;         ;
+; db/decode_4aa.tdf                ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M2ToVGA/db/decode_4aa.tdf                            ;         ;
+; db/mux_kob.tdf                   ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M2ToVGA/db/mux_kob.tdf                               ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf              ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc         ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc       ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc       ;         ;
+; db/clkstg2_altpll.v              ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M2ToVGA/db/clkstg2_altpll.v                          ;         ;
+; db/vgaclk_altpll.v               ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M2ToVGA/db/vgaclk_altpll.v                           ;         ;
+; altddio_in.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altddio_in.tdf          ;         ;
+; stratix_ddio.inc                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ddio.inc        ;         ;
+; cyclone_ddio.inc                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cyclone_ddio.inc        ;         ;
+; db/ddio_in_8hf.tdf               ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M2ToVGA/db/ddio_in_8hf.tdf                           ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; db/add_sub_ngh.tdf               ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M2ToVGA/db/add_sub_ngh.tdf                           ;         ;
+; db/add_sub_rgh.tdf               ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M2ToVGA/db/add_sub_rgh.tdf                           ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.tdf            ;         ;
+; db/mult_rgt.tdf                  ; yes             ; Auto-Generated Megafunction        ; Z:/Downloads/fpgaProjects/M2ToVGA/db/mult_rgt.tdf                              ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------------+
@@ -256,16 +257,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------------------------+
 ; Resource                                    ; Usage                           ;
 +---------------------------------------------+---------------------------------+
-; Estimated Total logic elements              ; 625                             ;
+; Estimated Total logic elements              ; 618                             ;
 ;                                             ;                                 ;
-; Total combinational functions               ; 495                             ;
+; Total combinational functions               ; 488                             ;
 ; Logic element usage by number of LUT inputs ;                                 ;
-;     -- 4 input functions                    ; 177                             ;
-;     -- 3 input functions                    ; 71                              ;
-;     -- <=2 input functions                  ; 247                             ;
+;     -- 4 input functions                    ; 173                             ;
+;     -- 3 input functions                    ; 69                              ;
+;     -- <=2 input functions                  ; 246                             ;
 ;                                             ;                                 ;
 ; Logic elements by mode                      ;                                 ;
-;     -- normal mode                          ; 256                             ;
+;     -- normal mode                          ; 249                             ;
 ;     -- arithmetic mode                      ; 239                             ;
 ;                                             ;                                 ;
 ; Total registers                             ; 325                             ;
@@ -282,8 +283,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                 ;
 ; Maximum fan-out node                        ; MITI_PLL_Divider:inst15|clk_out ;
 ; Maximum fan-out                             ; 202                             ;
-; Total fan-out                               ; 3070                            ;
-; Average fan-out                             ; 3.25                            ;
+; Total fan-out                               ; 3046                            ;
+; Average fan-out                             ; 3.24                            ;
 +---------------------------------------------+---------------------------------+
 
 
@@ -292,7 +293,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                 ; Entity Name      ; Library Name ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |M4ToVGA_top                                      ; 495 (2)             ; 325 (1)                   ; 192000      ; 2            ; 0       ; 1         ; 49   ; 0            ; |M4ToVGA_top                                                                                                                                        ; M4ToVGA_top      ; work         ;
+; |M4ToVGA_top                                      ; 488 (2)             ; 325 (1)                   ; 192000      ; 2            ; 0       ; 1         ; 49   ; 0            ; |M4ToVGA_top                                                                                                                                        ; M4ToVGA_top      ; work         ;
 ;    |MITI_PLL_Divider:inst15|                      ; 9 (9)               ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|MITI_PLL_Divider:inst15                                                                                                                ; MITI_PLL_Divider ; work         ;
 ;    |altddio:inst14|                               ; 0 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|altddio:inst14                                                                                                                         ; altddio          ; work         ;
 ;       |altddio_in:ALTDDIO_IN_component|           ; 0 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|altddio:inst14|altddio_in:ALTDDIO_IN_component                                                                                         ; altddio_in       ; work         ;
@@ -300,13 +301,13 @@ https://fpgasoftware.intel.com/eula.
 ;    |clkstg2:inst19|                               ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|clkstg2:inst19                                                                                                                         ; clkstg2          ; work         ;
 ;       |altpll:altpll_component|                   ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|clkstg2:inst19|altpll:altpll_component                                                                                                 ; altpll           ; work         ;
 ;          |clkstg2_altpll:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|clkstg2:inst19|altpll:altpll_component|clkstg2_altpll:auto_generated                                                                   ; clkstg2_altpll   ; work         ;
-;    |framebuffer:inst1|                            ; 71 (0)              ; 10 (0)                    ; 192000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|framebuffer:inst1                                                                                                                      ; framebuffer      ; work         ;
-;       |altsyncram:altsyncram_component|           ; 71 (0)              ; 10 (0)                    ; 192000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|framebuffer:inst1|altsyncram:altsyncram_component                                                                                      ; altsyncram       ; work         ;
-;          |altsyncram_loj1:auto_generated|         ; 71 (0)              ; 10 (10)                   ; 192000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated                                                       ; altsyncram_loj1  ; work         ;
+;    |framebuffer:inst1|                            ; 72 (0)              ; 10 (0)                    ; 192000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|framebuffer:inst1                                                                                                                      ; framebuffer      ; work         ;
+;       |altsyncram:altsyncram_component|           ; 72 (0)              ; 10 (0)                    ; 192000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|framebuffer:inst1|altsyncram:altsyncram_component                                                                                      ; altsyncram       ; work         ;
+;          |altsyncram_loj1:auto_generated|         ; 72 (0)              ; 10 (10)                   ; 192000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated                                                       ; altsyncram_loj1  ; work         ;
 ;             |decode_4aa:rden_decode_b|            ; 27 (27)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated|decode_4aa:rden_decode_b                              ; decode_4aa       ; work         ;
 ;             |decode_bua:decode2|                  ; 26 (26)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated|decode_bua:decode2                                    ; decode_bua       ; work         ;
 ;             |decode_bua:wren_decode_a|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated|decode_bua:wren_decode_a                              ; decode_bua       ; work         ;
-;             |mux_kob:mux3|                        ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated|mux_kob:mux3                                          ; mux_kob          ; work         ;
+;             |mux_kob:mux3|                        ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated|mux_kob:mux3                                          ; mux_kob          ; work         ;
 ;    |m4_input:inst10|                              ; 315 (288)           ; 241 (241)                 ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |M4ToVGA_top|m4_input:inst10                                                                                                                        ; m4_input         ; work         ;
 ;       |lpm_mult:Mult0|                            ; 27 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|m4_input:inst10|lpm_mult:Mult0                                                                                                         ; lpm_mult         ; work         ;
 ;          |multcore:mult_core|                     ; 27 (13)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|m4_input:inst10|lpm_mult:Mult0|multcore:mult_core                                                                                      ; multcore         ; work         ;
@@ -318,7 +319,7 @@ https://fpgasoftware.intel.com/eula.
 ;                      |add_sub_rgh:auto_generated| ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|m4_input:inst10|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_rgh:auto_generated ; add_sub_rgh      ; work         ;
 ;       |lpm_mult:Mult2|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |M4ToVGA_top|m4_input:inst10|lpm_mult:Mult2                                                                                                         ; lpm_mult         ; work         ;
 ;          |mult_rgt:auto_generated|                ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |M4ToVGA_top|m4_input:inst10|lpm_mult:Mult2|mult_rgt:auto_generated                                                                                 ; mult_rgt         ; work         ;
-;    |vga_out:inst2|                                ; 98 (31)             ; 59 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|vga_out:inst2                                                                                                                          ; vga_out          ; work         ;
+;    |vga_out:inst2|                                ; 90 (23)             ; 59 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|vga_out:inst2                                                                                                                          ; vga_out          ; work         ;
 ;       |hvsync_generator:hvsync|                   ; 41 (41)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|vga_out:inst2|hvsync_generator:hvsync                                                                                                  ; hvsync_generator ; work         ;
 ;       |lpm_mult:Mult0|                            ; 26 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|vga_out:inst2|lpm_mult:Mult0                                                                                                           ; lpm_mult         ; work         ;
 ;          |multcore:mult_core|                     ; 26 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|vga_out:inst2|lpm_mult:Mult0|multcore:mult_core                                                                                        ; multcore         ; work         ;
@@ -330,7 +331,7 @@ https://fpgasoftware.intel.com/eula.
 ;                      |add_sub_rgh:auto_generated| ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|vga_out:inst2|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_rgh:auto_generated   ; add_sub_rgh      ; work         ;
 ;    |vgaclk:inst12|                                ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|vgaclk:inst12                                                                                                                          ; vgaclk           ; work         ;
 ;       |altpll:altpll_component|                   ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|vgaclk:inst12|altpll:altpll_component                                                                                                  ; altpll           ; work         ;
-;          |vgaclk_altpll1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|vgaclk:inst12|altpll:altpll_component|vgaclk_altpll1:auto_generated                                                                    ; vgaclk_altpll1   ; work         ;
+;          |vgaclk_altpll:auto_generated|           ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |M4ToVGA_top|vgaclk:inst12|altpll:altpll_component|vgaclk_altpll:auto_generated                                                                     ; vgaclk_altpll    ; work         ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -452,8 +453,8 @@ Encoding Type:  One-Hot
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |M4ToVGA_top|m4_input:inst10|INCounterX[4]      ;
 ; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |M4ToVGA_top|m4_input:inst10|waddr[15]          ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |M4ToVGA_top|m4_input:inst10|INCounterY[0]      ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |M4ToVGA_top|vga_out:inst2|vr                   ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |M4ToVGA_top|m4_input:inst10|state_reg          ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |M4ToVGA_top|vga_out:inst2|vr                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 
 
@@ -1294,7 +1295,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; C7_TEST_SOURCE                ; 5                        ; Untyped                 ;
 ; C8_TEST_SOURCE                ; 5                        ; Untyped                 ;
 ; C9_TEST_SOURCE                ; 5                        ; Untyped                 ;
-; CBXI_PARAMETER                ; vgaclk_altpll1           ; Untyped                 ;
+; CBXI_PARAMETER                ; vgaclk_altpll            ; Untyped                 ;
 ; VCO_FREQUENCY_CONTROL         ; AUTO                     ; Untyped                 ;
 ; VCO_PHASE_SHIFT_STEP          ; 0                        ; Untyped                 ;
 ; WIDTH_CLOCK                   ; 5                        ; Signed Integer          ;
@@ -1522,6 +1523,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+--------------------------------+
 
 
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_out:inst2|hvsync_generator:hvsync"                                                      ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; HCounterY[0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
@@ -1535,23 +1545,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 6                           ;
 ;     SLD               ; 7                           ;
 ;     plain             ; 177                         ;
-; cycloneiii_lcell_comb ; 518                         ;
+; cycloneiii_lcell_comb ; 511                         ;
 ;     arith             ; 239                         ;
 ;         2 data inputs ; 182                         ;
 ;         3 data inputs ; 57                          ;
-;     normal            ; 279                         ;
+;     normal            ; 272                         ;
 ;         0 data inputs ; 4                           ;
 ;         1 data inputs ; 46                          ;
-;         2 data inputs ; 38                          ;
-;         3 data inputs ; 14                          ;
-;         4 data inputs ; 177                         ;
+;         2 data inputs ; 37                          ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 173                         ;
 ; cycloneiii_mac_mult   ; 1                           ;
 ; cycloneiii_mac_out    ; 1                           ;
 ; cycloneiii_pll        ; 2                           ;
 ; cycloneiii_ram_block  ; 24                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.80                        ;
-; Average LUT depth     ; 3.24                        ;
+; Average LUT depth     ; 3.21                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1570,36 +1580,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Mar 13 20:47:30 2021
+    Info: Processing started: Sat Mar 13 23:14:39 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off M4ToVGA -c M4ToVGA_top
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file clkstg2.v
-    Info (12023): Found entity 1: clkstg2 File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/clkstg2.v Line: 40
+    Info (12023): Found entity 1: clkstg2 File: Z:/Downloads/fpgaProjects/M2ToVGA/clkstg2.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file altddio.v
-    Info (12023): Found entity 1: altddio File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/altddio.v Line: 40
+    Info (12023): Found entity 1: altddio File: Z:/Downloads/fpgaProjects/M2ToVGA/altddio.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file miti_pll_divider.sv
-    Info (12023): Found entity 1: MITI_PLL_Divider File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/MITI_PLL_Divider.sv Line: 1
+    Info (12023): Found entity 1: MITI_PLL_Divider File: Z:/Downloads/fpgaProjects/M2ToVGA/MITI_PLL_Divider.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vgaclk.v
-    Info (12023): Found entity 1: vgaclk File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/vgaclk.v Line: 40
+    Info (12023): Found entity 1: vgaclk File: Z:/Downloads/fpgaProjects/M2ToVGA/vgaclk.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file framebuffer.v
-    Info (12023): Found entity 1: framebuffer File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/framebuffer.v Line: 40
+    Info (12023): Found entity 1: framebuffer File: Z:/Downloads/fpgaProjects/M2ToVGA/framebuffer.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file vga_out.sv
-    Info (12023): Found entity 1: vga_out File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/vga_out.sv Line: 13
+    Info (12023): Found entity 1: vga_out File: Z:/Downloads/fpgaProjects/M2ToVGA/vga_out.sv Line: 13
 Info (12021): Found 1 design units, including 1 entities, in source file m4tovga_top.bdf
     Info (12023): Found entity 1: M4ToVGA_top
 Info (12021): Found 1 design units, including 1 entities, in source file m4_input.sv
-    Info (12023): Found entity 1: m4_input File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv Line: 15
+    Info (12023): Found entity 1: m4_input File: Z:/Downloads/fpgaProjects/M2ToVGA/m4_input.sv Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file hvsync_generator.sv
-    Info (12023): Found entity 1: hvsync_generator File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/hvsync_generator.sv Line: 8
+    Info (12023): Found entity 1: hvsync_generator File: Z:/Downloads/fpgaProjects/M2ToVGA/hvsync_generator.sv Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file ledinverter.sv
-    Info (12023): Found entity 1: LEDInverter File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/LEDInverter.sv Line: 1
+    Info (12023): Found entity 1: LEDInverter File: Z:/Downloads/fpgaProjects/M2ToVGA/LEDInverter.sv Line: 1
 Info (12127): Elaborating entity "M4ToVGA_top" for the top level hierarchy
 Info (12128): Elaborating entity "vga_out" for hierarchy "vga_out:inst2"
-Info (12128): Elaborating entity "hvsync_generator" for hierarchy "vga_out:inst2|hvsync_generator:hvsync" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/vga_out.sv Line: 99
+Info (12128): Elaborating entity "hvsync_generator" for hierarchy "vga_out:inst2|hvsync_generator:hvsync" File: Z:/Downloads/fpgaProjects/M2ToVGA/vga_out.sv Line: 99
 Info (12128): Elaborating entity "framebuffer" for hierarchy "framebuffer:inst1"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "framebuffer:inst1|altsyncram:altsyncram_component" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/framebuffer.v Line: 91
-Info (12130): Elaborated megafunction instantiation "framebuffer:inst1|altsyncram:altsyncram_component" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/framebuffer.v Line: 91
-Info (12133): Instantiated megafunction "framebuffer:inst1|altsyncram:altsyncram_component" with the following parameter: File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/framebuffer.v Line: 91
+Info (12128): Elaborating entity "altsyncram" for hierarchy "framebuffer:inst1|altsyncram:altsyncram_component" File: Z:/Downloads/fpgaProjects/M2ToVGA/framebuffer.v Line: 91
+Info (12130): Elaborated megafunction instantiation "framebuffer:inst1|altsyncram:altsyncram_component" File: Z:/Downloads/fpgaProjects/M2ToVGA/framebuffer.v Line: 91
+Info (12133): Instantiated megafunction "framebuffer:inst1|altsyncram:altsyncram_component" with the following parameter: File: Z:/Downloads/fpgaProjects/M2ToVGA/framebuffer.v Line: 91
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
@@ -1619,24 +1629,24 @@ Info (12133): Instantiated megafunction "framebuffer:inst1|altsyncram:altsyncram
     Info (12134): Parameter "width_b" = "1"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_loj1.tdf
-    Info (12023): Found entity 1: altsyncram_loj1 File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/altsyncram_loj1.tdf Line: 34
+    Info (12023): Found entity 1: altsyncram_loj1 File: Z:/Downloads/fpgaProjects/M2ToVGA/db/altsyncram_loj1.tdf Line: 34
 Info (12128): Elaborating entity "altsyncram_loj1" for hierarchy "framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_bua.tdf
-    Info (12023): Found entity 1: decode_bua File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/decode_bua.tdf Line: 23
-Info (12128): Elaborating entity "decode_bua" for hierarchy "framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated|decode_bua:decode2" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/altsyncram_loj1.tdf Line: 47
+    Info (12023): Found entity 1: decode_bua File: Z:/Downloads/fpgaProjects/M2ToVGA/db/decode_bua.tdf Line: 23
+Info (12128): Elaborating entity "decode_bua" for hierarchy "framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated|decode_bua:decode2" File: Z:/Downloads/fpgaProjects/M2ToVGA/db/altsyncram_loj1.tdf Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_4aa.tdf
-    Info (12023): Found entity 1: decode_4aa File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/decode_4aa.tdf Line: 23
-Info (12128): Elaborating entity "decode_4aa" for hierarchy "framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated|decode_4aa:rden_decode_b" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/altsyncram_loj1.tdf Line: 48
+    Info (12023): Found entity 1: decode_4aa File: Z:/Downloads/fpgaProjects/M2ToVGA/db/decode_4aa.tdf Line: 23
+Info (12128): Elaborating entity "decode_4aa" for hierarchy "framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated|decode_4aa:rden_decode_b" File: Z:/Downloads/fpgaProjects/M2ToVGA/db/altsyncram_loj1.tdf Line: 48
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_kob.tdf
-    Info (12023): Found entity 1: mux_kob File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/mux_kob.tdf Line: 23
-Info (12128): Elaborating entity "mux_kob" for hierarchy "framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated|mux_kob:mux3" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/altsyncram_loj1.tdf Line: 50
+    Info (12023): Found entity 1: mux_kob File: Z:/Downloads/fpgaProjects/M2ToVGA/db/mux_kob.tdf Line: 23
+Info (12128): Elaborating entity "mux_kob" for hierarchy "framebuffer:inst1|altsyncram:altsyncram_component|altsyncram_loj1:auto_generated|mux_kob:mux3" File: Z:/Downloads/fpgaProjects/M2ToVGA/db/altsyncram_loj1.tdf Line: 50
 Info (12128): Elaborating entity "m4_input" for hierarchy "m4_input:inst10"
-Warning (10036): Verilog HDL or VHDL warning at m4_input.sv(50): object "hsync_r" assigned a value but never read File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv Line: 50
+Warning (10036): Verilog HDL or VHDL warning at m4_input.sv(61): object "hsync_r" assigned a value but never read File: Z:/Downloads/fpgaProjects/M2ToVGA/m4_input.sv Line: 61
 Info (12128): Elaborating entity "MITI_PLL_Divider" for hierarchy "MITI_PLL_Divider:inst15"
 Info (12128): Elaborating entity "clkstg2" for hierarchy "clkstg2:inst19"
-Info (12128): Elaborating entity "altpll" for hierarchy "clkstg2:inst19|altpll:altpll_component" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/clkstg2.v Line: 91
-Info (12130): Elaborated megafunction instantiation "clkstg2:inst19|altpll:altpll_component" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/clkstg2.v Line: 91
-Info (12133): Instantiated megafunction "clkstg2:inst19|altpll:altpll_component" with the following parameter: File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/clkstg2.v Line: 91
+Info (12128): Elaborating entity "altpll" for hierarchy "clkstg2:inst19|altpll:altpll_component" File: Z:/Downloads/fpgaProjects/M2ToVGA/clkstg2.v Line: 91
+Info (12130): Elaborated megafunction instantiation "clkstg2:inst19|altpll:altpll_component" File: Z:/Downloads/fpgaProjects/M2ToVGA/clkstg2.v Line: 91
+Info (12133): Instantiated megafunction "clkstg2:inst19|altpll:altpll_component" with the following parameter: File: Z:/Downloads/fpgaProjects/M2ToVGA/clkstg2.v Line: 91
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1691,12 +1701,12 @@ Info (12133): Instantiated megafunction "clkstg2:inst19|altpll:altpll_component"
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/clkstg2_altpll.v
-    Info (12023): Found entity 1: clkstg2_altpll File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/clkstg2_altpll.v Line: 30
+    Info (12023): Found entity 1: clkstg2_altpll File: Z:/Downloads/fpgaProjects/M2ToVGA/db/clkstg2_altpll.v Line: 30
 Info (12128): Elaborating entity "clkstg2_altpll" for hierarchy "clkstg2:inst19|altpll:altpll_component|clkstg2_altpll:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "vgaclk" for hierarchy "vgaclk:inst12"
-Info (12128): Elaborating entity "altpll" for hierarchy "vgaclk:inst12|altpll:altpll_component" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/vgaclk.v Line: 91
-Info (12130): Elaborated megafunction instantiation "vgaclk:inst12|altpll:altpll_component" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/vgaclk.v Line: 91
-Info (12133): Instantiated megafunction "vgaclk:inst12|altpll:altpll_component" with the following parameter: File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/vgaclk.v Line: 91
+Info (12128): Elaborating entity "altpll" for hierarchy "vgaclk:inst12|altpll:altpll_component" File: Z:/Downloads/fpgaProjects/M2ToVGA/vgaclk.v Line: 91
+Info (12130): Elaborated megafunction instantiation "vgaclk:inst12|altpll:altpll_component" File: Z:/Downloads/fpgaProjects/M2ToVGA/vgaclk.v Line: 91
+Info (12133): Instantiated megafunction "vgaclk:inst12|altpll:altpll_component" with the following parameter: File: Z:/Downloads/fpgaProjects/M2ToVGA/vgaclk.v Line: 91
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "625"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1750,13 +1760,13 @@ Info (12133): Instantiated megafunction "vgaclk:inst12|altpll:altpll_component" 
     Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
     Info (12134): Parameter "width_clock" = "5"
-Info (12021): Found 1 design units, including 1 entities, in source file db/vgaclk_altpll1.v
-    Info (12023): Found entity 1: vgaclk_altpll1 File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/vgaclk_altpll1.v Line: 30
-Info (12128): Elaborating entity "vgaclk_altpll1" for hierarchy "vgaclk:inst12|altpll:altpll_component|vgaclk_altpll1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Info (12021): Found 1 design units, including 1 entities, in source file db/vgaclk_altpll.v
+    Info (12023): Found entity 1: vgaclk_altpll File: Z:/Downloads/fpgaProjects/M2ToVGA/db/vgaclk_altpll.v Line: 30
+Info (12128): Elaborating entity "vgaclk_altpll" for hierarchy "vgaclk:inst12|altpll:altpll_component|vgaclk_altpll:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "altddio" for hierarchy "altddio:inst14"
-Info (12128): Elaborating entity "altddio_in" for hierarchy "altddio:inst14|altddio_in:ALTDDIO_IN_component" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/altddio.v Line: 65
-Info (12130): Elaborated megafunction instantiation "altddio:inst14|altddio_in:ALTDDIO_IN_component" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/altddio.v Line: 65
-Info (12133): Instantiated megafunction "altddio:inst14|altddio_in:ALTDDIO_IN_component" with the following parameter: File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/altddio.v Line: 65
+Info (12128): Elaborating entity "altddio_in" for hierarchy "altddio:inst14|altddio_in:ALTDDIO_IN_component" File: Z:/Downloads/fpgaProjects/M2ToVGA/altddio.v Line: 65
+Info (12130): Elaborated megafunction instantiation "altddio:inst14|altddio_in:ALTDDIO_IN_component" File: Z:/Downloads/fpgaProjects/M2ToVGA/altddio.v Line: 65
+Info (12133): Instantiated megafunction "altddio:inst14|altddio_in:ALTDDIO_IN_component" with the following parameter: File: Z:/Downloads/fpgaProjects/M2ToVGA/altddio.v Line: 65
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
     Info (12134): Parameter "invert_input_clocks" = "OFF"
     Info (12134): Parameter "lpm_hint" = "UNUSED"
@@ -1764,15 +1774,15 @@ Info (12133): Instantiated megafunction "altddio:inst14|altddio_in:ALTDDIO_IN_co
     Info (12134): Parameter "power_up_high" = "OFF"
     Info (12134): Parameter "width" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/ddio_in_8hf.tdf
-    Info (12023): Found entity 1: ddio_in_8hf File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/ddio_in_8hf.tdf Line: 25
+    Info (12023): Found entity 1: ddio_in_8hf File: Z:/Downloads/fpgaProjects/M2ToVGA/db/ddio_in_8hf.tdf Line: 25
 Info (12128): Elaborating entity "ddio_in_8hf" for hierarchy "altddio:inst14|altddio_in:ALTDDIO_IN_component|ddio_in_8hf:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altddio_in.tdf Line: 85
 Info (12128): Elaborating entity "LEDInverter" for hierarchy "LEDInverter:inst5"
 Info (278001): Inferred 3 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "vga_out:inst2|Mult0" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/vga_out.sv Line: 138
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "m4_input:inst10|Mult2" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv Line: 242
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "m4_input:inst10|Mult0" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv Line: 234
-Info (12130): Elaborated megafunction instantiation "vga_out:inst2|lpm_mult:Mult0" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/vga_out.sv Line: 138
-Info (12133): Instantiated megafunction "vga_out:inst2|lpm_mult:Mult0" with the following parameter: File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/vga_out.sv Line: 138
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "vga_out:inst2|Mult0" File: Z:/Downloads/fpgaProjects/M2ToVGA/vga_out.sv Line: 125
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "m4_input:inst10|Mult2" File: Z:/Downloads/fpgaProjects/M2ToVGA/m4_input.sv Line: 250
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "m4_input:inst10|Mult0" File: Z:/Downloads/fpgaProjects/M2ToVGA/m4_input.sv Line: 242
+Info (12130): Elaborated megafunction instantiation "vga_out:inst2|lpm_mult:Mult0" File: Z:/Downloads/fpgaProjects/M2ToVGA/vga_out.sv Line: 125
+Info (12133): Instantiated megafunction "vga_out:inst2|lpm_mult:Mult0" with the following parameter: File: Z:/Downloads/fpgaProjects/M2ToVGA/vga_out.sv Line: 125
     Info (12134): Parameter "LPM_WIDTHA" = "9"
     Info (12134): Parameter "LPM_WIDTHB" = "10"
     Info (12134): Parameter "LPM_WIDTHP" = "19"
@@ -1786,14 +1796,14 @@ Info (12131): Elaborated megafunction instantiation "vga_out:inst2|lpm_mult:Mult
 Info (12131): Elaborated megafunction instantiation "vga_out:inst2|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "vga_out:inst2|lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.tdf Line: 229
 Info (12131): Elaborated megafunction instantiation "vga_out:inst2|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "vga_out:inst2|lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_ngh.tdf
-    Info (12023): Found entity 1: add_sub_ngh File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/add_sub_ngh.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_ngh File: Z:/Downloads/fpgaProjects/M2ToVGA/db/add_sub_ngh.tdf Line: 23
 Info (12131): Elaborated megafunction instantiation "vga_out:inst2|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "vga_out:inst2|lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
 Info (12131): Elaborated megafunction instantiation "vga_out:inst2|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "vga_out:inst2|lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_rgh.tdf
-    Info (12023): Found entity 1: add_sub_rgh File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/add_sub_rgh.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_rgh File: Z:/Downloads/fpgaProjects/M2ToVGA/db/add_sub_rgh.tdf Line: 23
 Info (12131): Elaborated megafunction instantiation "vga_out:inst2|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "vga_out:inst2|lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
-Info (12130): Elaborated megafunction instantiation "m4_input:inst10|lpm_mult:Mult2" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv Line: 242
-Info (12133): Instantiated megafunction "m4_input:inst10|lpm_mult:Mult2" with the following parameter: File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv Line: 242
+Info (12130): Elaborated megafunction instantiation "m4_input:inst10|lpm_mult:Mult2" File: Z:/Downloads/fpgaProjects/M2ToVGA/m4_input.sv Line: 250
+Info (12133): Instantiated megafunction "m4_input:inst10|lpm_mult:Mult2" with the following parameter: File: Z:/Downloads/fpgaProjects/M2ToVGA/m4_input.sv Line: 250
     Info (12134): Parameter "LPM_WIDTHA" = "10"
     Info (12134): Parameter "LPM_WIDTHB" = "18"
     Info (12134): Parameter "LPM_WIDTHP" = "28"
@@ -1804,9 +1814,9 @@ Info (12133): Instantiated megafunction "m4_input:inst10|lpm_mult:Mult2" with th
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_rgt.tdf
-    Info (12023): Found entity 1: mult_rgt File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/db/mult_rgt.tdf Line: 29
-Info (12130): Elaborated megafunction instantiation "m4_input:inst10|lpm_mult:Mult0" File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv Line: 234
-Info (12133): Instantiated megafunction "m4_input:inst10|lpm_mult:Mult0" with the following parameter: File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv Line: 234
+    Info (12023): Found entity 1: mult_rgt File: Z:/Downloads/fpgaProjects/M2ToVGA/db/mult_rgt.tdf Line: 29
+Info (12130): Elaborated megafunction instantiation "m4_input:inst10|lpm_mult:Mult0" File: Z:/Downloads/fpgaProjects/M2ToVGA/m4_input.sv Line: 242
+Info (12133): Instantiated megafunction "m4_input:inst10|lpm_mult:Mult0" with the following parameter: File: Z:/Downloads/fpgaProjects/M2ToVGA/m4_input.sv Line: 242
     Info (12134): Parameter "LPM_WIDTHA" = "10"
     Info (12134): Parameter "LPM_WIDTHB" = "10"
     Info (12134): Parameter "LPM_WIDTHP" = "20"
@@ -1819,7 +1829,7 @@ Info (12133): Instantiated megafunction "m4_input:inst10|lpm_mult:Mult0" with th
 Info (12131): Elaborated megafunction instantiation "m4_input:inst10|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "m4_input:inst10|lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
 Info (12131): Elaborated megafunction instantiation "m4_input:inst10|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "m4_input:inst10|lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.tdf Line: 229
 Info (12131): Elaborated megafunction instantiation "m4_input:inst10|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "m4_input:inst10|lpm_mult:Mult0" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
-Info (13000): Registers with preset signals will power-up high File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv Line: 49
+Info (13000): Registers with preset signals will power-up high File: Z:/Downloads/fpgaProjects/M2ToVGA/m4_input.sv Line: 60
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "OutputLEDA[9]" is stuck at VCC
@@ -1828,26 +1838,26 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "OutputLEDA[6]" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/output_files/M4ToVGA_top.map.smsg
+Info (144001): Generated suppressed messages file Z:/Downloads/fpgaProjects/M2ToVGA/output_files/M4ToVGA_top.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 708 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 701 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 33 output pins
-    Info (21061): Implemented 631 logic cells
+    Info (21061): Implemented 624 logic cells
     Info (21064): Implemented 24 RAM segments
     Info (21065): Implemented 2 PLLs
     Info (21062): Implemented 2 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 4758 megabytes
-    Info: Processing ended: Sat Mar 13 20:47:52 2021
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Processing ended: Sat Mar 13 23:15:00 2021
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:30
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/output_files/M4ToVGA_top.map.smsg.
+The suppressed messages can be found in Z:/Downloads/fpgaProjects/M2ToVGA/output_files/M4ToVGA_top.map.smsg.
 
 
