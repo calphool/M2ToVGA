@@ -1,5 +1,0 @@
-
-State Machine - |M4ToVGA_top|m4_input:inst10|state_reg
-Name state_reg.MEMCLEAR 
-state_reg.NORMAL 0 
-state_reg.MEMCLEAR 1 

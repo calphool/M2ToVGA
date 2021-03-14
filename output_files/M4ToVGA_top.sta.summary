@@ -3,27 +3,35 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'm4_hsync'
-Slack : -3.225
-TNS   : -73.380
+Slack : -3.244
+TNS   : -73.968
 
-Type  : Slow 1200mV 85C Model Setup 'inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -1.707
-TNS   : -3.329
+Type  : Slow 1200mV 85C Model Setup 'inst19|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -1.952
+TNS   : -3.881
 
-Type  : Slow 1200mV 85C Model Setup 'external_clock'
-Slack : 19.114
+Type  : Slow 1200mV 85C Model Setup 'inst'
+Slack : 10.103
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.452
+Type  : Slow 1200mV 85C Model Setup 'external_clock'
+Slack : 19.104
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'inst19|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.365
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'external_clock'
-Slack : 0.497
+Slack : 0.487
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'm4_hsync'
 Slack : 0.497
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'inst'
+Slack : 0.650
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'm4_hsync'
@@ -34,36 +42,52 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'm4_video'
 Slack : -3.000
 TNS   : -3.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'external_clock'
-Slack : 9.689
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst19|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.017
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 19.590
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'external_clock'
+Slack : 9.698
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst'
+Slack : 19.693
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst12|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 80.095
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'm4_hsync'
-Slack : -2.776
-TNS   : -61.514
+Slack : -2.793
+TNS   : -61.878
 
-Type  : Slow 1200mV 0C Model Setup 'inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -1.605
-TNS   : -3.119
+Type  : Slow 1200mV 0C Model Setup 'inst19|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -2.249
+TNS   : -4.462
 
-Type  : Slow 1200mV 0C Model Setup 'external_clock'
-Slack : 19.208
+Type  : Slow 1200mV 0C Model Setup 'inst'
+Slack : 10.552
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.401
+Type  : Slow 1200mV 0C Model Setup 'external_clock'
+Slack : 19.198
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'inst19|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.400
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'external_clock'
-Slack : 0.445
+Slack : 0.435
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'm4_hsync'
 Slack : 0.447
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'inst'
+Slack : 0.608
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'm4_hsync'
@@ -74,52 +98,76 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'm4_video'
 Slack : -3.000
 TNS   : -3.000
 
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst19|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.017
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'external_clock'
-Slack : 9.673
+Slack : 9.679
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 19.597
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst'
+Slack : 19.723
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -1.328
-TNS   : -2.649
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst12|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 80.093
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'inst19|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -1.661
+TNS   : -3.287
 
 Type  : Fast 1200mV 0C Model Setup 'm4_hsync'
-Slack : -0.866
-TNS   : -11.234
+Slack : -0.870
+TNS   : -11.373
 
-Type  : Fast 1200mV 0C Model Setup 'external_clock'
-Slack : 19.626
+Type  : Fast 1200mV 0C Model Setup 'inst'
+Slack : 15.571
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.187
+Type  : Fast 1200mV 0C Model Setup 'external_clock'
+Slack : 19.616
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'inst19|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -0.088
+TNS   : -0.147
+
+Type  : Fast 1200mV 0C Model Hold 'external_clock'
+Slack : 0.198
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'm4_hsync'
 Slack : 0.206
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'external_clock'
-Slack : 0.208
+Type  : Fast 1200mV 0C Model Hold 'inst'
+Slack : 0.258
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'm4_hsync'
 Slack : -3.000
-TNS   : -92.981
+TNS   : -93.047
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'm4_video'
 Slack : -3.000
 TNS   : -3.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'external_clock'
-Slack : 9.273
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst19|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.504
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 19.605
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'external_clock'
+Slack : 9.281
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst'
+Slack : 19.709
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst12|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 80.101
 TNS   : 0.000
 
 ------------------------------------------------------------

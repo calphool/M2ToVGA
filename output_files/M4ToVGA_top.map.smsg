@@ -1,5 +1,6 @@
-Warning (10268): Verilog HDL information at vga_out.sv(50): always construct contains both blocking and non-blocking assignments File: Z:/Downloads/fpgaProjects/M4ToVGAProject/vga_out.sv Line: 50
-Warning (10268): Verilog HDL information at vga_out.sv(127): always construct contains both blocking and non-blocking assignments File: Z:/Downloads/fpgaProjects/M4ToVGAProject/vga_out.sv Line: 127
-Warning (10268): Verilog HDL information at m4_input.sv(106): always construct contains both blocking and non-blocking assignments File: Z:/Downloads/fpgaProjects/M4ToVGAProject/m4_input.sv Line: 106
-Warning (10268): Verilog HDL information at m4_input.sv(114): always construct contains both blocking and non-blocking assignments File: Z:/Downloads/fpgaProjects/M4ToVGAProject/m4_input.sv Line: 114
-Warning (10268): Verilog HDL information at m4_input.sv(159): always construct contains both blocking and non-blocking assignments File: Z:/Downloads/fpgaProjects/M4ToVGAProject/m4_input.sv Line: 159
+Warning (10268): Verilog HDL information at vga_out.sv(50): always construct contains both blocking and non-blocking assignments File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/vga_out.sv Line: 50
+Warning (10268): Verilog HDL information at vga_out.sv(102): always construct contains both blocking and non-blocking assignments File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/vga_out.sv Line: 102
+Warning (10268): Verilog HDL information at m4_input.sv(104): always construct contains both blocking and non-blocking assignments File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv Line: 104
+Warning (10268): Verilog HDL information at m4_input.sv(144): always construct contains both blocking and non-blocking assignments File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv Line: 144
+Warning (10268): Verilog HDL information at m4_input.sv(152): always construct contains both blocking and non-blocking assignments File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv Line: 152
+Warning (10268): Verilog HDL information at m4_input.sv(197): always construct contains both blocking and non-blocking assignments File: Z:/Downloads/fpgaProjects/M4ToVGA_With_LeftRightOffset/M4ToVGA-1.1/m4_input.sv Line: 197

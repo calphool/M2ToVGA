@@ -22,7 +22,8 @@ module m4_input (
 				  wren,
 				  leds0,leds1,leds2,leds3,
 				  outputLEDA,
-				  outputLEDB
+				  outputLEDB,
+				  H_0, H_1, H_2, H_3, H_4, H_5
 				  );
 				  
 // inputs and outputs				  
@@ -36,18 +37,23 @@ module m4_input (
 		output logic leds0,leds1,leds2,leds3;
       output logic [9:0] outputLEDA;
 		output logic [9:0] outputLEDB;
+		input H_0, H_1, H_2, H_3, H_4, H_5;
 		
 // registers
     reg [9:0] INCounterX;
     reg [9:0] INCounterY;
 	 reg [23:0] ledsreg;
 	 reg [31:0] calc;
+	 reg [9:0] offsetc;
 	 reg dot_r;
 	 reg dot_r2;
 	 reg hsync_r;
 	 reg hsync_r2;
 	 reg vsync_r;
 	 reg vsync_r2;
+	 reg h0_r,h1_r,h2_r,h3_r,h4_r,h5_r;
+	 reg h0_r2,h1_r2,h2_r2,h3_r2,h4_r2,h5_r2;
+	 reg [5:0] hvalue;
 	 reg [31:0] nextline_r;
 	 reg [31:0] nextline_r2;
 	 reg [31:0] oldlinectr;
@@ -77,6 +83,7 @@ begin
 	 dot_r2 <= 1;                    // double flop register for video signal
 	 waddr[17:0] <= 0;               // dual port write address
 	 pixel_state <= 1;               // pixel state output that goes to D input on dual port ram
+	 leds3 <= 1;                     // turn off LED3
     leds2 <= 1;                     // turn off LED2 (it's wired backward on Core Cyclone IV board 1 = 0ff, 0 = on)
 	 leds1 <= 1;                     // turn off LED1
 	 leds0 <= 1;                     // turn off LED0
@@ -89,16 +96,47 @@ begin
 	 outputLEDA <= 0;                // LED A indicator (10 bits)
 	 outputLEDB <= 0;                // LED B indicator (10 bits)
 	 screenMode <= SIXTYFOURCOLMODE; // screen mode
+	 offsetc <= 0;
 end
 
 
-// probably don't need this any more... double flopping of sync signals
+// double flopping of some input signals
 always @(posedge dotclk)
 begin
     hsync_r2 <= hsync;
 	 hsync_r <= hsync_r2;
 	 vsync_r2 <= vsync;
 	 vsync_r <= vsync_r2;
+	 
+	 h0_r <= H_0;
+	 h1_r <= H_1;
+	 h2_r <= H_2;
+	 h3_r <= H_3;
+	 h4_r <= H_4;
+	 h5_r <= H_5;
+	 
+	 h0_r2 <= h0_r;
+	 h1_r2 <= h1_r;
+	 h2_r2 <= h2_r;
+	 h3_r2 <= h3_r;
+	 h4_r2 <= h4_r;
+	 h5_r2 <= h5_r;	 
+	 
+	 hvalue[5] <= h5_r2;
+	 hvalue[4] <= h4_r2;
+	 hvalue[3] <= h3_r2;
+	 hvalue[2] <= h2_r2;
+	 hvalue[1] <= h1_r2;
+	 hvalue[0] <= h0_r2;
+	 
+	 if(hvalue >=32)
+	     begin
+		      offsetc = TRUNC9'((hvalue - 32) << 2);
+		  end
+    else
+	     begin
+		      offsetc = TRUNC9'((32 - hvalue) << 2);
+		  end
 end
 
 
@@ -114,8 +152,9 @@ end
 always @(posedge dotclk)
 begin
 	 ledsreg = TRUNC23'(ledsreg + 1'b1);           // increment the LED counter
-	 leds3 = ledsreg[20];                          // the 20th bit of the register seems to toggle about every half 
-	                                               // second when the dot clock is around 10mhz	 
+	 leds0 = ledsreg[19];                          // the 20th bit of the register seems to toggle about every half 
+	 leds1 = ledsreg[20];
+    leds2 = ledsreg[21];                         	 // second when the dot clock is around 10mhz	 
 	 
 	 //outputLEDB[9] = state_reg[0];                 // normal = off, memclear = on
 	 outputLEDB = highestDotCount;
@@ -126,8 +165,7 @@ begin
 			 state_reg = NORMAL;
 	 end
 	 
-	 outputLEDA = TRUNC9'(memCtr);                 // put memCtr in LED A indicator (normally 0)
-							
+	 outputLEDA = hvalue;
 							
 	 // this code turns on MEMCLEAR mode when we are switching between 64 and 80 column modes
 	 if(highestDotCount > 320)                     // ignore weird glitchy stuff
@@ -166,7 +204,7 @@ always @(posedge dotclk, posedge video)
 			    if(state_reg == NORMAL)             // if we're in NORMAL mode
 					 begin
 						 pixel_state = dot_r2;         // output pin for dual port ram set to whatever is in dot_r2
-						 leds2 <= 0;                   // set Core Board LED2 on to indicate we are running in NORMAL mode
+						 leds3 <= 0;                   // set Core Board LED2 on to indicate we are running in NORMAL mode
 						 memCtr<= 0;                   // set memCtr to 0 for later when we switch modes
 
 						 if(~vsync_r)                  // if we are in the vsync period at the bottom of a frame, reset counters
@@ -191,11 +229,18 @@ always @(posedge dotclk, posedge video)
 									// if we're on the same line as last dot clock, calculate the address for the next pixel,
 									// put it into the write address of the dual port ram, increment INCounterX for the next 
 									// pixel, and reset the dot_r2 video register back to black
-									begin
+									begin									
 										if(highestDotCount < 720)   // appears that it's 639 and 799 technically (80 column mode vs 64 column mode)
 											 calc = (800*INCounterY) + INCounterX + 16;       // 64 column mode shifting
 										else 
-											 calc = (800*(INCounterY-8)) + INCounterX - 71;   // 80 column mode shifting
+										    if(hvalue >= 32)
+										        begin
+											         calc = (800*(INCounterY-8)) + INCounterX + offsetc;   // 80 column mode shifting
+											     end
+											 else
+											     begin
+											         calc = (800*(INCounterY-8)) + INCounterX - offsetc;   // 80 column mode shifting
+												  end
 
 										waddr[17:0] = TRUNC'(calc);                          // set write address in dual port ram
 										INCounterX = INCounterX + 1'b1;                      // increment X counter
@@ -205,7 +250,7 @@ always @(posedge dotclk, posedge video)
 				 else 
 				     if(state_reg == MEMCLEAR)                                         // we are in MEMCLEAR mode
 					  begin
-					      leds2 <= 1;                                                   // turn Core Board LED 2 off
+					      leds3 <= 1;                                                   // turn Core Board LED 2 off
 					      pixel_state <= 0;                                             // set pixel going to RAM to off
 							waddr[17:0] = TRUNC'(memCtr);                                 // set write address to memCtr
 							memCtr = memCtr + 1'b1;                                       // increment memCtr

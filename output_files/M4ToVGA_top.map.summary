@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sat Feb 06 22:32:25 2021
+Analysis & Synthesis Status : Successful - Sat Mar 13 20:47:52 2021
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : M4ToVGA_top
 Top-level Entity Name : M4ToVGA_top
 Family : Cyclone IV E
-Total logic elements : 554
-    Total combinational functions : 434
-    Dedicated logic registers : 313
-Total registers : 313
+Total logic elements : 625
+    Total combinational functions : 495
+    Dedicated logic registers : 325
+Total registers : 325
 Total pins : 49
 Total virtual pins : 0
 Total memory bits : 192,000
