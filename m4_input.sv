@@ -58,6 +58,7 @@ module m4_input (
 	 reg [9:0] offsetc;
 	 reg dot_r;
 	 reg dot_r2;
+	 reg dot_r3;
 	 reg hsync_r;
 	 reg hsync_r2;
 	 reg vsync_r;
@@ -92,6 +93,7 @@ begin
 	 ledsreg <= 0;                   // counter for register used to blink LED when dot clock is present
 	 wren <= 1;                      // dual port ram write enable pin (just leave it on)
 	 dot_r2 <= 1;                    // double flop register for video signal
+	 dot_r3 <= 1;
 	 waddr[17:0] <= 0;               // dual port write address
 	 pixel_state <= 1;               // pixel state output that goes to D input on dual port ram
 	 leds3 <= 1;                     // turn off LED3
@@ -200,18 +202,23 @@ begin
 end
 
 
+always @(posedge dotclk, posedge video)
+begin
+    if(video) 
+         dot_r2 <= 1'b1;
+	 else
+	      dot_r2 <= 1'b0;
+			
+	 dot_r3 <= dot_r2;
+end
+
 
 // main code block
-always @(posedge dotclk, posedge video)
+always @(posedge dotclk)
 		 begin
-			 if(video)                              // when video input shows a high signal, put a 1 in dot_r2 register
-				 begin
-						dot_r2 <= 1'b1;
-				 end
-			 else
 			    if(state_reg == NORMAL)             // if we're in NORMAL mode
 					 begin
-						 pixel_state = dot_r2;         // output pin for dual port ram set to whatever is in dot_r2
+						 pixel_state = dot_r3;         // output pin for dual port ram set to whatever is in dot_r3
 						 leds3 <= 0;                   // set Core Board LED2 on to indicate we are running in NORMAL mode
 						 memCtr<= 0;                   // set memCtr to 0 for later when we switch modes
 
@@ -252,7 +259,6 @@ always @(posedge dotclk, posedge video)
 
 										waddr[17:0] = TRUNC'(calc);                          // set write address in dual port ram
 										INCounterX = INCounterX + 1'b1;                      // increment X counter
-										dot_r2 <= 1'b0;                                      // set dot register to zero
 									end		  
 					 end
 				 else 

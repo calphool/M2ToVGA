@@ -1,2 +1,0 @@
-v1
-PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,m4_input:inst10|lpm_mult:Mult2|mult_rgt:auto_generated|mac_mult1,
