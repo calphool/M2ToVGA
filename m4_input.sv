@@ -68,6 +68,7 @@ module m4_input (
 	 reg [5:0] hvalue;
 	 reg [31:0] nextline_r;
 	 reg [31:0] nextline_r2;
+	 reg [31:0] nextline_r3;
 	 reg [31:0] oldlinectr;
 	 reg [1:0]  state_reg;
 	 reg [23:0] memCtr;
@@ -101,7 +102,8 @@ begin
 	 leds1 <= 1;                     // turn off LED1
 	 leds0 <= 1;                     // turn off LED0
 	 nextline_r <= 0;                // double flop register for counting horizontal lines
-	 nextline_r2 <= 0;               // double flop register for countering horizontal lines
+	 nextline_r2 <= 0;               // double flop register for counting horizontal lines
+	 nextline_r3 <= 0;               // triple flop register for counting horizontal lines
 	 oldlinectr <= 0;                // control break register for horizontal lines
 	 highestDotCount <= 0;           // counter for determining dots per row
 	 state_reg <= NORMAL;            // are we in normal mode or memory clear mode?
@@ -144,11 +146,11 @@ begin
 	 
 	 if(hvalue >=32)
 	     begin
-		      offsetc = TRUNC9'((hvalue - 32) << 2);   // split the 6 bit value in half and store in offsetc
+		      offsetc <= TRUNC9'((hvalue - 32) << 2);   // split the 6 bit value in half and store in offsetc
 		  end
     else
 	     begin
-		      offsetc = TRUNC9'((32 - hvalue) << 2);
+		      offsetc <= TRUNC9'((32 - hvalue) << 2);
 		  end
 end
 
@@ -157,7 +159,8 @@ end
 always @(negedge hsync)
 begin
     nextline_r <= nextline_r + 1;
-	 nextline_r2 = nextline_r;
+	 nextline_r2 <= nextline_r;
+	 nextline_r3 <= nextline_r2;
 end
 
 
@@ -224,20 +227,20 @@ always @(posedge dotclk)
 
 						 if(~vsync_r)                  // if we are in the vsync period at the bottom of a frame, reset counters
 							  begin		  		
-								  highestDotCount = 1'b0;
+								  highestDotCount <= 1'b0;
 								  INCounterY <= 1'b0;
 								  INCounterX <= 1'b0;
 							  end
 						 else 
-							  // if the nextline_r2 register has turned over increment INCounterY, reset InCounterX, and change oldlinectr
+							  // if the nextline_r3 register has turned over increment INCounterY, reset InCounterX, and change oldlinectr
 							  // this implements an "only once" reset for the end of each line
-							  if(nextline_r2 != oldlinectr)
+							  if(nextline_r3 != oldlinectr)
 									begin
 										 if(highestDotCount < INCounterX)
-											  highestDotCount = INCounterX;
+											  highestDotCount <= INCounterX;
 											  										 
-										 INCounterX = 1'b0;
-										 oldlinectr <= nextline_r2;						
+										 INCounterX <= 1'b0;
+										 oldlinectr <= nextline_r3;						
 										 INCounterY <= INCounterY + 1'b1;
 								   end
 							  else
@@ -265,7 +268,7 @@ always @(posedge dotclk)
 				     if(state_reg == MEMCLEAR)                                         // we are in MEMCLEAR mode
 					  begin
 					      leds3 <= 1;                                                   // turn Core Board LED 3 off
-					      pixel_state <= 0;                                             // set pixel going to RAM to off
+							pixel_state <= 0;
 							waddr[17:0] = TRUNC'(memCtr);                                 // set write address to memCtr
 							memCtr = memCtr + 1'b1;                                       // increment memCtr
 					  end
